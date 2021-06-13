@@ -4,7 +4,10 @@
   "description": "Demonstrate proficiency in express, node, bcrypt, handlebars, sequelize, mysql, and javascript by correctly using them in MVC DRY coding for this application.",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "seeds": "node seeds/index.js",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
