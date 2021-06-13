@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Comment, Vote } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -48,7 +48,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // expects {username: 'kpessa', email: 'kpessa@gmail.com', password: 'test1234'}
+  // expects {username: 'QueenCJ', email: 'QueenCJ@gmail.com', password: 'testing420'}
   User.create({
     username: req.body.username,
     email: req.body.email,
@@ -70,14 +70,15 @@ router.post('/', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-  // expects {username: 'kpessa', password: 'test1234'}
+  // expects {username: 'QueenCJ', password: 'testing420'}
   User.findOne({
     where: {
       username: req.body.username,
+      email: req.body.email
     },
   }).then(dbUserData => {
     if (!dbUserData) {
-      res.status(400).json({ message: 'No user with that email address!' });
+      res.status(400).json({ message: 'No user with that username and/or email address!' });
       return;
     }
 
@@ -109,7 +110,7 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  // expects {username: 'kpessa', email: 'kpessa@gmail.com', password: 'test1234'}
+  // expects {username: 'QueenCJ', email: 'QueenCJ @gmail.com', password: 'testing420'}
 
   // pass in req.body instead to only update what's passed through
   User.update(req.body, {

@@ -5,6 +5,7 @@ class Comment extends Model {}
 
 Comment.init(
   {
+    // Start of columns
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -12,10 +13,10 @@ Comment.init(
       autoIncrement: true
     },
     comment_text: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
       validate: {
-        len: [1]
+        len: (1)
       }
     },
     user_id: {
