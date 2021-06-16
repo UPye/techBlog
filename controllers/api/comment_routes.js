@@ -5,13 +5,13 @@ router.get('/', (req, res) => {
   Comment.findAll()
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
+        console.log(err);
+        res.status(500).json(err);
     });
-});
+  });
 
 router.post('/', (req, res) => {
-  // expects => {comment_text: "This is the comment", user_id: 1, post_id: 2}
+  // expects => [comment_text: "Comment text", user_id: 1, post_id: 2]
   Comment.create({
     comment_text: req.body.comment_text,
     user_id: req.session.user_id,
@@ -19,8 +19,8 @@ router.post('/', (req, res) => {
   })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
-      console.log(err);
-      res.status(400).json(err);
+        console.log(err);
+        res.status(400).json(err);
     });
 });
 
