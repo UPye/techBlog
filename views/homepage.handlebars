@@ -1,13 +1,4 @@
-<ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    {{> post-info post }}
-  </li>
-  {{/each}}
-</ol>
-
-{{!-- HOMEPAGE when user is logged in --}}
-
+{{!-- HOMEPAGE display when the user is logged in --}}
 {{#if loggedIn}}
 {{#each posts }}
 <a id="link" href="/view-comment/{{id}}" class="text-decoration-none ">
@@ -23,18 +14,20 @@
     <div class="d-flex flex-wrap justify-content-center row bg-dark bg-gradient">
       <div class="col-sm-12 text-start text-warning border border-warning rounded-bottom my-2 fs-6 p-3 bg-dark bg-gradient"
         style="width: 99%;">
-        {{content}}
+        {{post_data}}
       </div>
     </div>
   </div>
 </a>
 {{/each}}
 {{/if}}
-{{!-- HOMEPAGE if user is not actively logged in --}}
+
+
+{{!-- HOMEPAGE display when the user is not logged in --}}
 {{#unless loggedIn}}
 {{#each posts }}
-<a id="link" href="/login" class="text-decoration-none">
-  <div class="container-fluid border border-warning border-3 rounded-3 my-2 shadow-lg" style="width: 70%;">
+<a id="link" href="/login" class="text-decoration-none ">
+  <div class="container-fluid border border-warning border-3 rounded-3 my-2 shadow-1g" style="width: 70%;">
     <div class="d-flex flex-wrap row justify-content-between bg-dark bg-gradient">
       <div class="col-6 text-start text-warning fs-3">
         {{title}}
@@ -46,7 +39,7 @@
     <div class="d-flex flex-wrap justify-content-center row bg-dark bg-gradient">
       <div class="col-sm-12 text-start text-muted border border-warning rounded-bottom my-2 fs-6 p-3 bg-dark bg-gradient"
         style="width: 99%;">
-        {{content}}
+        {{post_data}}
       </div>
     </div>
   </div>
