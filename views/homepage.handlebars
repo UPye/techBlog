@@ -1,52 +1,45 @@
-<ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    {{> post-info post }}
-  </li>
-  {{/each}}
-</ol>
-
-{{!-- HOMEPAGE when user is logged in --}}
-
+{{!-- HOMEPAGE display when the user is logged in --}}
 {{#if loggedIn}}
 {{#each posts }}
-<a id="link" href="/view-comment/{{id}}" class="text-decoration-underline ">
-  <div class="container-fluid border border-dark border-2 rounded-3 my-2 shadow-1g" style="width: 70%;">
-    <div class="d-flex flex-wrap row justify-content-between bg-info bg-gradient">
-      <div class="col-6 text-start text-dark fs-3">
+<a id="link" href="/view-comment/{{id}}" class="text-decoration-none ">
+  <div class="container-fluid border border-dark border-3 rounded-3 my-2 shadow-1g" style="width: 70%;">
+    <div class="d-flex flex-wrap row justify-content-between bg-dark bg-gradient">
+      <div class="col-6 text-start text-warning fs-3">
         {{title}}
       </div>
       <div class="col-6 text-end text-muted mt-3">
         Posted by {{user.username}} on {{format_date created_at}}
       </div>
     </div>
-    <div class="d-flex flex-wrap justify-content-center row bg-info bg-gradient">
-      <div class="col-sm-12 text-start text-dark border border-primary rounded-bottom my-2 fs-6 p-3 bg-info bg-gradient"
+    <div class="d-flex flex-wrap justify-content-center row bg-dark bg-gradient">
+      <div class="col-sm-12 text-start text-warning border border-warning rounded-bottom my-2 fs-6 p-3 bg-dark bg-gradient"
         style="width: 99%;">
-        {{content}}
+        {{post_data}}
       </div>
     </div>
   </div>
 </a>
 {{/each}}
 {{/if}}
-{{!-- HOMEPAGE if user is not actively logged in --}}
+
+
+{{!-- HOMEPAGE display when the user is not logged in --}}
 {{#unless loggedIn}}
 {{#each posts }}
-<a id="link" href="/login" class="text-decoration-underline">
-  <div class="container-fluid border border-primary border-2 rounded-3 my-2 shadow-lg" style="width: 70%;">
-    <div class="d-flex flex-wrap row justify-content-between bg-info bg-gradient">
-      <div class="col-6 text-start text-dark fs-3">
+<a id="link" href="/login" class="text-decoration-none ">
+  <div class="container-fluid border border-warning border-3 rounded-3 my-2 shadow-1g" style="width: 70%;">
+    <div class="d-flex flex-wrap row justify-content-between bg-dark bg-gradient">
+      <div class="col-6 text-start text-warning fs-3">
         {{title}}
       </div>
       <div class="col-6 text-end text-muted mt-3">
         Posted by {{user.username}} on {{format_date created_at}}
       </div>
     </div>
-    <div class="d-flex flex-wrap justify-content-center row bg-info bg-gradient">
-      <div class="col-sm-12 text-start text-muted border border-primary rounded-bottom my-2 fs-6 p-3 bg-info bg-gradient"
+    <div class="d-flex flex-wrap justify-content-center row bg-dark bg-gradient">
+      <div class="col-sm-12 text-start text-muted border border-warning rounded-bottom my-2 fs-6 p-3 bg-dark bg-gradient"
         style="width: 99%;">
-        {{content}}
+        {{post_data}}
       </div>
     </div>
   </div>
