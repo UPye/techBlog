@@ -92,12 +92,12 @@ router.get('/edit/:id', (req, res) => {
 });
 
 
-router.get('/add-post', (req, res) => {
+router.get('/createPost', (req, res) => {
     let logged = req.session.loggedIn
     if(!logged){
         res.redirect('/login')
     }
-    res.render('add-post', {loggedIn:true});
+    res.render('createPost', {loggedIn:true});
 });
 
 

@@ -1,21 +1,24 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Post, User, Comment, Vote } = require('../models');
+const { Post, User, Comment } = require('../models');
 
-// get all posts for dashboard
+
+// RENDERS dashboard page for a LOGGED IN user only
 router.get('/', (req, res) => {
+    let logged = req.session.loggedIn
+    if(!logged){
+        res.redirect('/login')
+    }
     console.log(req.session);
-    console.log('======================');
     Post.findAll({
         where: {
             user_id: req.session.user_id
         },
         attributes: [
             'id',
-            'post_url',
+            'post_data',
             'title',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
         include: [
             {
@@ -41,15 +44,18 @@ router.get('/', (req, res) => {
             res.status(500).json(err);
         });
 });
-
+//  Edit a post by ID
 router.get('/edit/:id', (req, res) => {
+    let logged = req.session.loggedIn
+    if(!logged){
+        res.redirect('/login')
+    }
     Post.findByPk(req.params.id, {
         attributes: [
             'id',
-            'post_url',
+            'post_data',
             'title',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
         include: [
             {
@@ -82,5 +88,15 @@ router.get('/edit/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+
+router.get('/createPost', (req, res) => {
+    let logged = req.session.loggedIn
+    if(!logged){
+        res.redirect('/login')
+    }
+    res.render('createPost', {loggedIn:true});
+});
+
 
 module.exports = router;
