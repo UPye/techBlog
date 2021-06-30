@@ -18,7 +18,7 @@ Finally, a positive environment where coders can vent. It is a new and establish
 You will need to install dotenv, express, sequelize, mysql2, bcrypt, connect-session-sequelize, express-handlebars, express-session, handlebars and node (if not already downloaded). Install these packages to run and contribute to this app.
 
 ## Link to site
-<a href="https://techblogup.herokuapp.com/" target="_blank">
+https://techblogup.herokuapp.com/
 
 ## Screenshot of site
 ![alt_text](https://github.com/UPye/techBlog/blob/main/images/screenshot.png)
