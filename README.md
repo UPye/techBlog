@@ -21,7 +21,7 @@ You will need to install dotenv, express, sequelize, mysql2, bcrypt, connect-ses
 https://techblogup.herokuapp.com/
 
 ## Screenshot of site
-
+![alt_text](https://github.com/UPye/techBlog/blob/main/images/screenshot.png)
 
 ## Future Developments
 I would love to expand on this tech blog by making it so bloggers can add one another and upload pictures and videos.
