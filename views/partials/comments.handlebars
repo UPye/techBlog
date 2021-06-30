@@ -1,0 +1,14 @@
+<h2> Comments </h2>
+{{#each this}}
+<div class="comment">
+    <div class="comment-body">
+        {{comment_text}}
+    </div>
+    <div class="post-footer">
+        <ul class="list-inline post-details">
+            <li class="list-inline-item"><span class="icon"><i class="fas fa-user"></i></span> {{ user.username}} </li>
+            <li class="list-inline-item"><span class="icon"><i class="far fa-calendar-alt"></i></span> {{format_date created_at}} </li>
+        </ul>
+    </div>
+</div>
+{{/each}}

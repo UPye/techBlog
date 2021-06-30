@@ -1,0 +1,16 @@
+<article class="post">
+    <h2 class="post-title"><a href="/post/{{id}}"> {{title}} </a></h2>
+    <div class="post-body">
+       {{post_text}}
+    </div>
+    <div class="post-footer">
+        <ul class="list-inline post-details mb-3">
+            <li class="list-inline-item"><span class="icon"><i class="fas fa-user"></i></span> {{user.username}} </li>
+            <li class="list-inline-item"><span class="icon"><i class="far fa-calendar-alt"></i></span> {{format_date created_at}} </li>
+            <li class="list-inline-item"><a href="/post/{{id}}"><span class="icon"><i class="fas fa-comment"></i></span>{{comments.length}} {{format_plural "comment" comments.length}} </a></li>
+        </ul>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a class="btn btn-primary edit-btn" href="/dashboard/edit/{{id}}"><i class="fas fa-edit"></i> Edit Post </a></li>
+        </ul>
+    </div>
+</article>

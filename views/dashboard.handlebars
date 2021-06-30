@@ -1,0 +1,26 @@
+{{#if posts.length }}
+{{#each posts as |post|}}
+<div class="post-container">
+    {{> post-info post}}
+</div>
+
+{{/each}}
+
+{{/if}}
+
+<div class="post-container">
+    <h2 class="mb-4">Create a new post</h2>
+    <form class="new-post-form">
+        <div class="mb-3">
+            <label class="form-label" for="post-title">Title</label>
+            <input class="form-control" type="text" id="post-title" name="post-title" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="post-url">Post Message</label>
+            <textarea id="post_text" name="post_text" rows="4" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Post</button>
+    </form>
+</div>
+
+<script src="/javascript/add-post.js"></script>

@@ -1,0 +1,38 @@
+<div class="mb-3">
+  <a href="/dashboard"><span class="icon"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i></span> Return to Dashboard</a>
+</div>
+<div class="post-container">
+<article class="single-post">
+    <form class="edit-post-form row">
+        <div class="col-md-6 col-sm-12">
+        <label class="form-label">Post Title</label>
+        <input class="form-control" type="text" name="post-title" value="{{post.title}}">
+        </div>
+    
+    <div class="post-body">
+        <label for="exampleFormControlTextarea1" class="form-label">Post Message</label>
+        <textarea class="form-control" id="postText" rows="4" value="{{post.post_text}}"></textarea>
+    </div>
+    
+    <div class="post-footer">
+        <ul class="list-inline post-details mb-3">
+           <li class="list-inline-item"><span class="icon"><i class="fas fa-user"></i></span> {{post.user.username}}</li>
+            <li class="list-inline-item"><span class="icon"><i class="far fa-calendar-alt"></i></span>{{format_date post.created_at}}</li>
+            <li class="list-inline-item"><a href="/post/{{id}}"><span class="icon"><i class="fas fa-comment"></i></span>{{post.comments.length}} {{format_plural "comment" comments.length}}</a></li>
+        </ul>
+        <ul class="list-inline">
+            <li class="list-inline-item"><button type="submit" class="btn btn-primary "><i class="fas fa-save"></i> Update Post</a></li>
+            <li class="list-inline-item"><button type="button" class="btn btn-danger delete-post-btn"><i class="fas fa-trash"></i> Delete Post</a></li>
+        </ul>
+    </div>
+    </form>
+</article>
+{{> add-comment}}
+
+{{> comments post.comments}}
+
+</div>
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>
