@@ -6,8 +6,8 @@
 * [Html changes](#html-changes)
 * [CSS changes](#css-changes)
 * [Link to site](#link-to-site)
-* [Screenshot](#screenshots-of-command-line)
-* [Future Developments](#future-development)
+* [Screenshot](#screenshot-of-site)
+* [Future Developments](#future-developments)
 * [Credits](#credits)
 * [License](#license)
 
@@ -18,21 +18,16 @@ Finally, a positive environment where coders can vent. It is a new and establish
 You will need to install dotenv, express, sequelize, mysql2, bcrypt, connect-session-sequelize, express-handlebars, express-session, handlebars and node (if not already downloaded). Install these packages to run and contribute to this app.
 
 ## Link to site
-https://drive.google.com/file/d/13bgWG6kd_Pr2rSKj5gCS9Pa3SjYO9nyp/preview
-https://drive.google.com/file/d/13bgWG6kd_Pr2rSKj5gCS9Pa3SjYO9nyp/view
+https://techblogup.herokuapp.com/
 
-## Screenshots of command line
-![alt_text](https://github.com/UPye/ECommerce/blob/main/imgs/Site1.png)
+## Screenshot of site
 
-![alt_text](https://github.com/UPye/ECommerce/blob/main/imgs/Site2.png)
-
-![alt_text](https://github.com/UPye/ECommerce/blob/main/imgs/Site3.png)
 
 ## Future Developments
-I would love to expand on this e-commerce server built, so that more product information may be included to expand on the ever growing e-commerce market. I would also love to include front-end code, so it may become a community of entreprenuers supporting one another's growth. Lastly, I would like to deploy this application to Heroku.
+I would love to expand on this tech blog by making it so bloggers can add one another and upload pictures and videos.
 
 ## Credits
-I want to thank UCF coding bootcamp for the knowledge gained this week to construct this database. It was very well put together and easy to understand!
+I want to thank UCF coding bootcamp, YouTube University, and Google University for the knowledge gained this week to construct this website.
 
 ## License
 Copyright (c) 2012-2020 Scott Chacon and others
