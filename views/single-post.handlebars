@@ -1,0 +1,18 @@
+<div class="mb-3">
+  <a href="/dashboard"><span class="icon"><i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i></span> Return to Dashboard</a>
+</div>
+<div class="post-container">
+
+{{> post-info post }}
+
+{{#if loggedIn}}
+{{> add-comment}}
+{{/if}}
+
+{{> comments post.comments}}
+
+</div>
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+
+{{/if}}

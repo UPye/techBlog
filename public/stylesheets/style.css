@@ -1,0 +1,92 @@
+html, body {
+    background: #f1f1f1;
+    color: #55616d;
+    font-size: 16px;
+}
+nav {
+    font-size: 20px;
+    height: 80px;
+}
+.navbar-brand {
+    font-size: 26px;
+}
+.bg-dark {
+    background-color: #1c4c79 !important;
+}
+main {
+    margin-top: 40px;
+}
+.container {
+    max-width: 1000px;
+}
+article {
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+.comment {
+    background: #e6e6e6; 
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+.comment-body {
+    margin-bottom: 1rem;
+}
+.add-comment {
+    margin: 2rem 0;
+}
+.single-post-container {
+    background: #fff;
+    border-radius: 5px;
+    padding: 40px;
+}
+
+.post-container {
+    background: #fff;
+    border-radius: 5px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+.post-footer { 
+    color: #83879e;
+}
+h2 {
+    font-size: 20px;
+}
+.post-body {
+    margin-top: 10px; margin-bottom: 1rem;
+}
+.post-list {
+    list-style: none;
+}
+.icon {
+    margin-right: 5px;
+}
+.post-details { 
+    margin-bottom: 0;
+}
+.post-detail ul { 
+    margin-bottom: 0;
+}
+.post-details li { 
+    margin-right: 2rem !important;
+}
+a { 
+    color: #55616d;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+.new-post {
+    margin-top: 2rem;
+}
+.login-container {
+    background: #fff;
+    padding: 2rem;
+}
+.empty {
+    background: #e6e6e6;
+    padding: 2rem;
+    border-radius: 5px;
+}
